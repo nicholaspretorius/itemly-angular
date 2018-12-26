@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^7.1.4",
     "@types/lodash": "^4.14.119",
     "core-js": "^2.6.1",
+    "guid": "0.0.12",
     "lodash": "^4.17.11",
     "rxjs": "^6.3.3",
     "typescript": "^3.1.6",
