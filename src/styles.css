@@ -42,9 +42,14 @@ label {
     font-style: italic;
 }
 .show-completed {
+    margin: 1em 0;
     font-size: 1rem;
     color: slategray;
 }
 .show-completed input {
     transform: scale(1.4);
+}
+
+.hide-done .complete {
+    display: none;
 }

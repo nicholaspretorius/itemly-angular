@@ -2,4 +2,6 @@
 
 <TodoList [todos]="todos" [showDone]="showDone"></TodoList>
 
-<TodoInput></TodoInput>
+<TodoInput (addTodoEvent)="onAddTodo($event)"></TodoInput>
+
+<ShowDone (onToggleDoneEvent)="onToggleDone($event)"></ShowDone>

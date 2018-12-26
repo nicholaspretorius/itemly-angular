@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { state } from './shared';
+import guid from 'guid';
 
 @Component({
     selector: 'app-root',
@@ -17,5 +18,15 @@ export class AppComponent {
 
         console.log('CONSTRUCTOR: ', this.todos, this.showDone);
 
+    }
+
+    public onAddTodo(e) {
+        if (e.todo) {
+            this.todos.push({ id: guid.raw(), text: e.todo, done: false });
+        }
+    }
+
+    public onToggleDone(e) {
+        this.showDone = e;
     }
 };

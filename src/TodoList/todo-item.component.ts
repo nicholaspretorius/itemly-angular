@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'TodoItem',
-    template: `<li>
+    template: `<li class="{{ done ? 'complete' : '' }}">
         {{todo}}
-        <input type="checkbox" value="{{done}}"/>
+        <input type="checkbox" [(ngModel)]="done"/>
     </li>`
 })
 
