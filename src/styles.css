@@ -1,15 +1,13 @@
 body {
     font-family: Helvetica, sans-serif, monospace;
     color: darkslategray;
-    font-size: 1.4em;
-    margin: 1.4em;
-    width: 22em;
+    font-size: 1.2em;
+    margin: 1em;
     position: relative;
 }
 input[type=text] {
     margin-top: 1em;
     padding: 0.8em;
-    width: 100%;
     font-size: 0.7em;
 }
 input[type=checkbox] {

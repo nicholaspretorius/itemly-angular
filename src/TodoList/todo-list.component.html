@@ -1,3 +1,3 @@
 <ul>
-    <TodoItem *ngFor="let todo of todos" [todo]="todo.text" [done]="todo.done" class="{{ showDone ? '' : 'hide-done' }}"></TodoItem>
+    <TodoItem *ngFor="let todo of todos" [todo]="todo.description" [done]="todo.done" class="{{ showDone ? '' : 'hide-done' }}"></TodoItem>
 </ul>

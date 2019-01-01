@@ -1,5 +1,6 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { state } from './shared';
+import { TodoService } from './todo.service';
 import guid from 'guid';
 
 @Component({
@@ -7,22 +8,34 @@ import guid from 'guid';
     templateUrl: 'app.template.html'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-    protected todos: any[];
+    protected todos;
     protected showDone: boolean = true;
 
-    constructor(@Inject(state) state) {
-        this.todos = state.todos;
-        this.showDone = state.showDone;
+    constructor(
+        @Inject(state) state,
+        private readonly todoService: TodoService,
+    ) {
+        // this.todos = state.todos;
+        // this.showDone = state.showDone;
+    }
 
-        console.log('CONSTRUCTOR: ', this.todos, this.showDone);
+    ngOnInit() {
+        this.getTodos();
+    }
 
+    public getTodos(): void {
+        this.todoService.getTodos()
+            .subscribe(todos => this.todos = todos);
     }
 
     public onAddTodo(e) {
         if (e.todo) {
-            this.todos.push({ id: guid.raw(), text: e.todo, done: false });
+            console.log('e.Todo: ', e.todo);
+            //this.todos.push({ id: guid.raw(), text: e.todo, done: false });
+            this.todoService.createTodo({ description: e.todo, done: false })
+            .subscribe((todo) => this.getTodos());
         }
     }
 
